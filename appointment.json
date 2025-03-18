@@ -4,7 +4,7 @@
       "id": "1",
       "name": "Toast Blue",
       "phone": "+3670708954",
-      "date": "2025-03-11",
+      "date": "2025-03-17",
       "time": "10:00",
       "category": "doctor"
     },
@@ -12,7 +12,7 @@
       "id": "2",
       "name": "Toast Red",
       "phone": "+3670708954",
-      "date": "2025-03-12",
+      "date": "2025-03-19",
       "time": "11:00",
       "category": "tattoo artist"
     },
@@ -20,7 +20,7 @@
       "id": "3",
       "name": "Toast Black",
       "phone": "+3670708954",
-      "date": "2025-03-13",
+      "date": "2025-03-18",
       "time": "08:00",
       "category": "psychologist"
     },
@@ -28,7 +28,7 @@
       "id": "4",
       "name": "Toast Purple",
       "phone": "+3670708954",
-      "date": "2025-03-14",
+      "date": "2025-03-18",
       "time": "12:00",
       "category": "doctor"
     },
@@ -36,7 +36,7 @@
       "id": "5",
       "name": "Toast Orange",
       "phone": "+3670708954",
-      "date": "2025-03-15",
+      "date": "2025-03-20",
       "time": "09:00",
       "category": "hairdresser (female)"
     },
