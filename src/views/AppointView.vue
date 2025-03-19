@@ -3,11 +3,11 @@
     <h2>Időpont foglalás</h2>
     <form @submit.prevent="submitForm">
       <label for="name">Név:</label>
-      <input type="text" v-model="name" required>
+      <input type="text" v-model="name">
       <br>
 
       <label for="phone">Telefonszám:</label>
-      <input type="text" v-model="phone" required>
+      <input type="text" v-model="phone" >
       <br>
 
       <label for="date">Dátum:</label>
@@ -19,7 +19,7 @@
       <br>
 
       <label for="category">Szolgáltatás:</label>
-      <select v-model="category" required>
+      <select v-model="category" >
         <option value="pszichológus">Pszichológus</option>
         <option value="fodrász">Fodrász</option>
         <option value="műkörmös">Műkörmös</option>

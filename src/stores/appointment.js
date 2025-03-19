@@ -3,11 +3,13 @@ import { defineStore } from 'pinia'
 import axios from 'axios';
 import router from '@/router';
 import dayjs from 'dayjs';
+import { useToast } from 'vue-toastification';
 
 export const useAppointmentStore = defineStore('appointment', () => {
   const appointmentStore = ref([]);
   const selectedDate = ref('');
   const selectedTime = ref('');
+  const toast = useToast();
 
   const fetchAppointments = async () => {
     const resp = await axios.get('http://localhost:3000/appointment');
@@ -45,16 +47,27 @@ export const useAppointmentStore = defineStore('appointment', () => {
   }
   
   const addNewAppoint = (a) => {
-    a.id = (appointmentStore.value.length + 1).toString();
-    appointmentStore.value.push(a);
-    toAppoint(a);
-    console.log(a);
-    router.push('/');
+    if (a.name.length == 0 || a.phone.length == 0 || a.category.length == 0) {
+      toast.error('Minden mezőt ki kell tölteni!')
+    }
+    else{
+      a.id = (appointmentStore.value.length + 1).toString();
+      appointmentStore.value.push(a);
+      toAppoint(a);
+      console.log(a);
+      router.push('/');
+    }
   };
 
   const toAppoint = async (a) => {
-    const resp = await axios.post('http://localhost:3000/appointment', a);
-    console.log(resp.status);
+    try {
+      const resp = await axios.post('http://localhost:3000/appointment', a);
+      console.log(resp.status);
+      toast.success("Sikeresen foglaltál!")
+    } catch (error) {
+      console.log(error);
+      toast.error("Sikertelen lefoglalni! Oka: " + error)
+    }
   }
 
   return { 
